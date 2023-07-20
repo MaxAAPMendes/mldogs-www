@@ -1,0 +1,82 @@
+.main {
+  /* border: 1px solid lightpink; */
+  height: 100%;
+  min-height: 100%;
+  width: 90vw;
+  margin: auto;
+  padding: 0;
+}
+
+.inputCpf {
+  margin: 10px;
+  display: grid;
+  width: 100%;
+  /* border: 2px solid red; */
+}
+
+.inputCpf > * {
+  margin: 10px;
+}
+
+.containerCpf {
+  width: 30%;
+}
+
+.containerAcao {
+  margin: 4%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.containerLink {
+  margin: auto;
+  width: 100%;
+}
+.containerCamposCliente {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.containerAcordion {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+  width: 100%;
+}
+
+.containerAcordionCao {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+  width: 100%;
+}
+
+.margem10 {
+  margin: 10px;
+}
+
+.containerBtnEnviar {
+  margin: 15px 10px;
+}
+.campoNome {
+  width: 100%;
+}
+/* Tablet */
+@media screen and (max-width: 700px) {
+  .containerCpf {
+    width: 50%;
+  }
+  .containerAcordion {
+    grid-template-columns: 100%;
+    width: 100%;
+  }
+}
+
+/* celular */
+@media screen and (max-width: 480px) {
+  .containerCpf {
+    width: 95%;
+  }
+}

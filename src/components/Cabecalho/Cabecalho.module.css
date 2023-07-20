@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0px;
+  border-bottom: 2px solid var(--rosa-padrao);
+}
+
+.imagem {
+  margin-right: 20px;
+}
+
+.titulo {
+  color: var(--rosa-padrao);
+  font-weight: 700;
+}

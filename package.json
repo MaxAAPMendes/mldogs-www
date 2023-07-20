@@ -4,11 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/joy": "^5.0.0-alpha.85",
+    "@mui/material": "^5.13.5",
+    "@mui/x-date-pickers": "^6.9.0",
+    "axios": "^1.4.0",
+    "dayjs": "^1.11.8",
+    "gerador-validador-cpf": "^5.0.2",
+    "mobx": "^6.9.0",
+    "mobx-react": "^7.6.0",
     "next": "13.4.10",
     "react": "18.2.0",
     "react-dom": "18.2.0"

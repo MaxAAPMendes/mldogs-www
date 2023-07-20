@@ -1,0 +1,36 @@
+
+.conteudoMsg {
+  display: grid;
+  align-items: center;
+  justify-content: flex-start;
+  margin: auto;
+  gap: 2px;
+  width: auto;
+  /* border: 2px solid red; */
+}
+
+.containerData > * {
+  height: 40px;
+  width: 100%;
+  /* font-size: 5px; */
+}
+
+.containerTitulo {
+  /* width: 100%; */
+  min-height: 50px;
+  /* border-bottom: 1px solid var(--rosa-padrao); */
+  border-bottom: 1px solid var(--azul-padrao);
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  color: var(--azul-padrao);
+}
+
+.containerProcessando {
+  display: grid;
+  grid-template-columns: 70% 25%;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

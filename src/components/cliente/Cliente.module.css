@@ -1,0 +1,18 @@
+.containerLinkCliente {
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #2673b3;
+  margin: auto;
+  padding: 2px;
+  inline-size: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Tablet and Smaller Desktop */
+@media screen and (max-width: 700px) {
+  .containerLinkCliente {
+    display: block;
+  }
+}
