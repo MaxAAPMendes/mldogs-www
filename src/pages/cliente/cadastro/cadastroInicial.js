@@ -1,30 +1,31 @@
 
-import estilos from "./PageCliente.module.css";
+import estilos from "../PageCliente.module.css";
 import { TextField, Button } from "@mui/material";
 import { useState } from "react";
-import { mascaraCPF } from '../../utils/mascaras/cpf';
+import { mascaraCPF } from '../../../utils/mascaras/cpf';
 import { validate } from "gerador-validador-cpf";
 import { observer } from "mobx-react";
-import alerta from '../../models/alerta';
-import { MensagemAlerta } from '../../utils/comuns/mensagemAlerta';
-import Cliente from '../../api/cliente';
+import alerta from '../../../models/alerta';
+import { MensagemAlerta } from '../../../utils/comuns/mensagemAlerta';
+import Cliente from '../../../api/cliente';
 import RotateRightIcon from '@mui/icons-material/RotateRight';
 import IconLimpar from '@mui/icons-material/CleaningServices';
-import LinkPreCadastroCliente from "@/components/cliente/linkPreCadastroCliente";
+// import LinkPreCadastroCliente from "@/components/cliente/EXCLUIRlinkPreCadastroCliente";
 import { TituloPagina } from "@/utils/comuns/tituloPagina";
-import { Cabecalho } from '../../components/Cabecalho';
+import { Cabecalho } from '../../../components/Cabecalho';
 
-function LinkAutoCadastro() {
+function CadastroInicial() {
   const [cpf, setCpf] = useState("");
   const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
   const [carregando, setCarregando] = useState(false);
-  const [link, setLink] = useState(null);
+  // const [link, setLink] = useState(null);
   const [id, setId] = useState("");
   const limpar = () => {
     setCpf("");
     setNome("");
     setId("");
-    setLink(false);
+    // setLink(false);
   }
   let textoAjudaCpf = "";
   const cadastrar = async () => {
@@ -57,7 +58,7 @@ function LinkAutoCadastro() {
         tipoAlerta: "info"
       });
     }
-    const dadosCliente = { nome_dono: nome, cpf };
+    const dadosCliente = { nome_dono: nome, cpf, email };
     const { error: erroCadastro, idCadastrado, mensagem: msgErroCadastro } =
       await Cliente.cadastrarTemporario(dadosCliente);
     if (erroCadastro || !idCadastrado) {
@@ -67,7 +68,7 @@ function LinkAutoCadastro() {
       });
     }
     setId(idCadastrado);
-    setLink(true);
+    // setLink(true);
     return alerta.ativarMensagem({
       texto: `Cliente cadastrado com sucesso - ID ${idCadastrado}`,
       tipoAlerta: "sucesso"
@@ -105,6 +106,18 @@ function LinkAutoCadastro() {
             onChange={(e) => setNome(e.target.value)}
           />
         </div>
+        <div>
+          <TextField
+            className={estilos.campoEmail}
+            id="input-email-cliente"
+            label="Email"
+            placeholder="Email do cliente"
+            variant="outlined"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+          />
+        </div>
       </div>
       <div className={estilos.containerAcao}>
         <Button
@@ -124,14 +137,14 @@ function LinkAutoCadastro() {
           {carregando ? "Executando..." : "Limpar" }
         </Button>
       </div>
-      <div className={estilos.containerLink}>
+      {/* <div className={estilos.containerLink}>
         {link && (
           <LinkPreCadastroCliente cpf={cpf} id={id}/>
         )}
-      </div>
+      </div> */}
       <MensagemAlerta />
     </div>
   )
 };
 
-export default observer(LinkAutoCadastro);
+export default observer(CadastroInicial);

@@ -61,12 +61,21 @@
   margin: 15px 10px;
 }
 .campoNome {
-  width: 100%;
+  width: 60%;
+}
+.campoEmail {
+  width: 60%;
 }
 /* Tablet */
 @media screen and (max-width: 700px) {
   .containerCpf {
     width: 50%;
+  }
+  .campoNome {
+    width: 100%;
+  }
+  .campoEmail {
+    width: 100%;
   }
   .containerAcordion {
     grid-template-columns: 100%;
